@@ -242,7 +242,8 @@ fn test_serialization() {
     v1.extend(v2);
     //println!("{}",v1.len());
 
-    let ser = SerialMessage::new(1,"test.txt".to_string(),None,Some(8),Some(vec![8,10,45,2]),None);
+    let ser = SerialMessage::new(1,"test.txt".to_string(),
+                    None,Some(8),Some(vec![8,10,45,2]),None);
     println!("{:?}",ser.serialize_message());
     let de = SerialMessage::deserialize(ser.serialize_message());
     println!("{:?}",de);
